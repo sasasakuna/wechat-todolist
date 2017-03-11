@@ -32,7 +32,19 @@ Page({
     const item = e.currentTarget.dataset.todo
     let { todos } = this.data
     todos = todos.filter( x => x.todo !== item)
-    console.log('todoDel', todos)
+    this.setData({
+      todos
+    })
+  },
+  toggleTodo: function(e) {
+    const { todo } = e.currentTarget.dataset;
+    let { todos } = this.data
+    todos = todos.map( x => {
+      if( x.todo === todo ) {
+        x.completed = !x.completed
+      }
+      return x;
+    })
     this.setData({
       todos
     })
