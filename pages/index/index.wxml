@@ -15,6 +15,7 @@
   <view class="todo-list">
     <view class="todo-item" wx:for="{{todos}}">
       <text>{{item.todo}}</text>
+      <icon type="cancel" bindtap="todoDel" data-todo="{{item.todo}}" />
     </view>
   </view>
 </view>

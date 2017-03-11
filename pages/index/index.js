@@ -22,10 +22,19 @@ Page({
       completed: false
     }
     todos.push(newTodo)
-    console.log('saveTodo', todo, todos)
+    // console.log('saveTodo', todo, todos)
     this.setData({
       todo: '',
       todos: todos
+    })
+  },
+  todoDel: function(e) {
+    const item = e.currentTarget.dataset.todo
+    let { todos } = this.data
+    todos = todos.filter( x => x.todo !== item)
+    console.log('todoDel', todos)
+    this.setData({
+      todos
     })
   },
   //事件处理函数
