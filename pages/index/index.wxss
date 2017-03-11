@@ -25,3 +25,14 @@
   font-size: 28px;
 }
 
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.todo-item {
+  display: flex;
+  height: 60rpx;
+  position: relative;
+}
